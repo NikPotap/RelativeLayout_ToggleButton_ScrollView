@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         val book = database(resources.getString(R.string.content))
         contentTV.text = ""
-        for (temp in loadBook(book.text)) contentTV.append(temp)
+        for (temp in loadBook(book.text)) contentTV.append(temp + " ")
     }
 }
 
-fun loadBook(text: String): List<String> = listOf(text.trim(' '))
+fun loadBook(text: String): List<String> = text.split(" ")
